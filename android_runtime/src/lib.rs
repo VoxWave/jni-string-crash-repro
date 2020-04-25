@@ -1,5 +1,3 @@
-#[macro_use]
-extern crate lazy_static;
 extern crate jni;
 
 use jni::{
@@ -7,8 +5,6 @@ use jni::{
     sys::jbyteArray,
     JNIEnv, JavaVM,
 };
-use std::sync::Mutex;
-use wasmer_runtime::{compile, func, imports, Ctx, ImportObject, Instance, Module};
 
 #[no_mangle]
 pub unsafe extern "C" fn Java_com_wasmer_android_MainActivity_JNIExecuteWasm(
