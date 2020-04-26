@@ -24,4 +24,7 @@ pub fn call_test(env: &JNIEnv, class: &JObject, test: &str) {
     let test = JValue::Object(test.into());
     env.call_method(*class, "Test", "(Ljava/lang/String;)V", &[test])
         .unwrap();
+    if let JValue::Object(obj) = test {
+        env.delete_local_ref(obj).unwrap();
+    }
 }
