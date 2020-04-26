@@ -22,5 +22,6 @@ pub fn call_test(env: &JNIEnv, class: &JObject, test: &str) {
         .new_string(test)
         .expect("Couldn't create a java string!");
     let test = JValue::Object(test.into());
-    env.call_method(*class, "Test", "(Ljava/lang/String;)V", &[test]).unwrap();
+    env.call_method(*class, "Test", "(Ljava/lang/String;)V", &[test])
+        .unwrap();
 }
