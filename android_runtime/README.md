@@ -14,6 +14,6 @@ ln -s ~/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/linux-x86_64/bin/x
 
 export PATH=~/Android/Sdk/ndk/21.0.6113669/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
 
-cargo +nightly build --target aarch64-linux-android --release --features singlepass
-cargo +nightly build --target x86_64-linux-android --release --features singlepass
+cargo +nightly build --target aarch64-linux-android --release
+cargo +nightly build --target x86_64-linux-android --release
 ```
